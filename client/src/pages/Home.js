@@ -1,16 +1,20 @@
 import React from 'react'
+import Header from '../components/Header/Header'
 
 const Home = () => {
   return (
-    <div name='login' className='hidden bg-gray-300 w-full h-screen'>
-        {/*NAVBAR */}
+    <div className=' bg-gray-300 w-full h-screen'>
 
-        <div>
-            <nav className='bg-[#0C0C0C] w-full h-[80px] text-gray-300'>
+    <Header/>
 
-            </nav>
-        </div>
+    {/*LOGIN BOX */}
+    <div name= 'login box'>
+        
+
+
     </div>
+
+</div>
   )
 }
 
