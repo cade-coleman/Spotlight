@@ -1,19 +1,21 @@
-
-
-import Account from './components/Account';
-import Home from './components/Home';
-import Login from './components/Login';
+import React from "react";
+import Account from "./pages/Account";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-     
-      <div>
-      <Account/>
-      <Home/>
-      <Login/>
-    </div>
-     
-    
+    <Router>
+      <div className="flex-column justify-flex-start min-100-vh">
+        <div className="container"></div>
+        <Routes>
+            <Route path="/account" element={<Account />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
