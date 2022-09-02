@@ -9,8 +9,10 @@ const Home = () => {
 
     {/*LOGIN BOX */}
     <div name= 'login box'>
-        
-
+         
+    <div>
+      
+    </div>
 
     </div>
 

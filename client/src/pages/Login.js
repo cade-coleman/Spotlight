@@ -67,7 +67,7 @@ const handleSubmit = async (e) => {
               />
           </form>
 
-        {/*LOIN BUTTON */}
+        {/*LOGIN BUTTON */}
           <div className='flex flex-col justify-center py-4 px-40'>
             <a href='http://localhost:3000/Home' className='bg-green-500 rounded-md text-white  hover:bg-green-700 text-center' >Log In</a>
           </div>
