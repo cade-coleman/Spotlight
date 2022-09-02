@@ -1,22 +1,23 @@
-import React from 'react'
-import Header from '../components/Header/Header'
+import React from "react";
+import Header from "../components/Header/Header";
+import Nav from "../components/Nav/Nav";
 
 const Home = () => {
   return (
-    <div className=' bg-gray-300 w-full h-screen'>
-
-    <Header/>
-
-    {/*LOGIN BOX */}
-    <div name= 'login box'>
-        
+    <div>
+        <Header />
+      <div className=" bg-gray-300 w-full h-screen">
 
 
+
+
+
+
+        <div name="login box"></div>
+      </div>
+        <Nav />
     </div>
-
-</div>
-  )
-}
-
+  );
+};
 
 export default Home;
