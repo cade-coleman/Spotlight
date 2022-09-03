@@ -1,12 +1,12 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-
+import './style.css';
 
 function Header() {
   return (
-    <div>
-      <header className="flex justify-between bg-blue-500">
-        <div className="w-20 "><img src={require('./logo2.png')} alt='logo' />
+    <div className=" bgBlue">
+      <header className="flex justify-between bgBlue">
+        <div className="w-20"><img className="logoSize" src={require('./logo2.png')} alt='logo' />
         </div>
         <div className="flex">
           <div className="self-center">
