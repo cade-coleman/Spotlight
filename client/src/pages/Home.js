@@ -10,9 +10,6 @@ const Home = () => {
 
 
 
-
-
-
         <div name="login box"></div>
       </div>
         <Nav />
