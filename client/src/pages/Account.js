@@ -2,6 +2,7 @@ import React from 'react'
 import {FiEdit2} from 'react-icons/fi'
 import Content from '../components/Content/Content'
 import {FaFacebook, FaLinkedin} from 'react-icons/fa'
+import Nav from '../components/Nav/Nav';
 
 
 
@@ -74,6 +75,7 @@ const Account = () => {
           
 
         </div>
+        <Nav/>
     </div>
   )
 }

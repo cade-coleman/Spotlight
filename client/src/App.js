@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import EditProfile from "./pages/EditProfile";
 import Signup from "./pages/Signup";
+import Notifications from "./pages/Notifications";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
         <Routes>
             <Route path="/account" element={<Account />} />
             <Route path="/editProfile" element={<EditProfile/>} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/notifications" element={<Notifications />} />
         </Routes>
       </div>
     </Router>

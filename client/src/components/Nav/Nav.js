@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import "./style.css";
 
@@ -53,36 +54,41 @@ function Nav() {
   return (
     <div className="bg-grey">
       <menu className="menu flex h-20 justify-around">
-        <button
+        <Link
+          to="/"
           onClick={handleClick1}
           className={
             isActive1 ? "homeButtonActive navButton" : "homeButton navButton"
           }
-        ></button>
+        ></Link>
 
-        <button
+        <Link
+          to="/notifications"
           onClick={handleClick2}
           className={isActive2 ? "newNotActive navButton" : "newNot navButton"}
-        ></button>
+        ></Link>
 
-        <button
+        <Link
+          to="/post"
           onClick={handleClick3}
           className={
             isActive3 ? "newPostActive navButton" : "newPost navButton"
           }
-        ></button>
+        ></Link>
 
-        <button
+        <Link
+          to=""
           onClick={handleClick4}
           className={isActive4 ? "dmActive navButton" : "dm navButton"}
-        ></button>
+        ></Link>
 
-        <button
+        <Link
+          to="/account"
           onClick={handleClick5}
           className={
             isActive5 ? "profInfoActive navButton" : "profInfo navButton"
           }
-        ></button>
+        ></Link>
 
         <div className="menu__border"></div>
       </menu>
