@@ -67,12 +67,16 @@ const Signup = () => {
               name='first'
               type='text'
               id= 'first'
+              value={formState.first}
+              onChange={handleChange}
             />
             <input className='rounded-md'
               placeholder='Last Name'
               name='last'
               type='text'
               id= 'last'
+              value={formState.last}
+              onChange={handleChange}
             />
             <input className='rounded-md'
               placeholder='Email'
@@ -93,27 +97,18 @@ const Signup = () => {
           
             {/*Creat Acc Btn */}
             <div className='flex flex-col justify-center py-4 px-28'>
-              <button className='bg-green-500 rounded-md text-white' >Create account</button>
-            </div>
-            
-
-            {/*Go to Login Page */}
-            <div className='flex flex-col justify-center py-4 px-28 text-white'>
-            <p>Already have an account?</p>
-            </div>
-            <div className='flex flex-col justify-center py-4 px-28'>
-            <button
-              className='bg-green-500 rounded-md text-white'
-              type='submit'   
-              >Go to Login
-            </button>
-
-            </div>
+              <button className='bg-green-500 rounded-md text-white' type='submit' >Create account</button>
+            </div> 
           </form>
           )}
-          
           {error && (<div>Sign up failed</div>)}
-
+          {/*Go to Login Page */}
+          <div className='flex flex-col justify-center py-4 px-28 text-white'>
+            <p>Already have an account?</p>
+          </div>
+          <div className='flex flex-col justify-center py-4 px-28'>
+            <button className='bg-green-500 rounded-md text-white'  >Go to Login</button>
+          </div>
 
         </div>
 
