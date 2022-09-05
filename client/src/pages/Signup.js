@@ -1,8 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
-
+import { Link } from 'react-router-dom'
+// Route Imports
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+// Auth Import
+import Auth from '../utils/auth';
 
 const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '' 
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
 
     <div className=' bg-[#10133F] w-full h-screen'>
@@ -10,53 +45,74 @@ const Signup = () => {
         style={{ backgroundImage: `url(${Logo})`}}
         className='content-div flex justify-center items-center'></div>
 
-        {/*LOGIN BOX */}
+        {/*LOGIN BOX */} 
         <div name= 'login box'>
-          <form className='flex flex-col px-12'>
-            <label htmlFor='usename' className='text-gray-300'>Username:</label>
+          {data ? (
+            <p>
+              Success! You may now head{' '}
+              <Link to="/login">back to the login page.</Link>
+            </p>
+          ) : (
+          <form onSubmit={handleFormSubmit} className='flex flex-col px-12'>
             <input className='rounded-md'
+              placeholder='Username'
+              name='username'
               type='text'
               id= 'username'
+              value={formState.username}
+              onChange={handleChange}
             />
-            <label htmlFor='first' className='text-gray-300'>First Name:</label>
             <input className='rounded-md'
+              placeholder='First Name'
+              name='first'
               type='text'
               id= 'first'
             />
-            <label htmlFor='last' className='text-gray-300'>Last Name:</label>
             <input className='rounded-md'
+              placeholder='Last Name'
+              name='last'
               type='text'
               id= 'last'
             />
-            <label htmlFor='designation' className='text-gray-300'>Title:</label>
             <input className='rounded-md'
+              placeholder='Email'
+              name='email'
               type='text'
-              id= 'designation'
+              id= 'email'
+              value={formState.email}
+              onChange={handleChange}
             />
-            <label htmlFor='password' className='text-gray-300'>Password:</label>
             <input className='rounded-md'
+              placeholder='Password'
+              name='password'
               type='text'
               id= 'password'
+              value={formState.password}
+              onChange={handleChange}
             />
-          </form>
-
-        {/*LOIN BUTTON */}
-          <div className='flex flex-col justify-center py-4 px-28'>
-            <button className='bg-green-500 rounded-md text-white' >Create account</button>
-          </div>
           
-          <div className='flex flex-col justify-center py-4 px-28 text-white'>
-           <p>Already have an account?</p>
-          </div>
-
-          {/*CREATE AN ACCOUNT BUTTON */}
-          <div className='flex flex-col justify-center py-4 px-28'>
-           <button className='bg-green-500 rounded-md text-white'>Login</button>
-
-          </div>
-          
-          
+            {/*Creat Acc Btn */}
+            <div className='flex flex-col justify-center py-4 px-28'>
+              <button className='bg-green-500 rounded-md text-white' >Create account</button>
+            </div>
             
+
+            {/*Go to Login Page */}
+            <div className='flex flex-col justify-center py-4 px-28 text-white'>
+            <p>Already have an account?</p>
+            </div>
+            <div className='flex flex-col justify-center py-4 px-28'>
+            <button
+              className='bg-green-500 rounded-md text-white'
+              type='submit'   
+              >Go to Login
+            </button>
+
+            </div>
+          </form>
+          )}
+          
+          {error && (<div>Sign up failed</div>)}
 
 
         </div>
