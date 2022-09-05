@@ -1,26 +1,30 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
     type User {
-        _id: ID!
-        username: String!
-        email: String!
-        password: String!
+        _id: ID
+        username: String
+        firstName: String
+        lastName: String
+        title: String
+        bio: String
+        email: String
+        password: String
         posts: [Post]!
     }
 
     type Post {
         _id: ID!
-        postText: String!
-        postAuthor: String!
+        postText: String
+        postAuthor: String
         createdAt: String
-        comments: [Comment]
+        comments: [Comment]!
     }
 
     type Comment {
         _id: ID!
-        commentText: String!
-        commentAuthor: String!
+        commentText: String
+        commentAuthor: String
         createdAt: String
     }
 
