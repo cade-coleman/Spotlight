@@ -52,7 +52,7 @@ const Signup = () => {
           {data ? (
             <p>
               Success! You may now head{' '}
-              <Link to="/login">back to the login page.</Link>
+              <Link to="/">back to the login page.</Link>
             </p>
           ) : (
           <form onSubmit={handleFormSubmit} className='flex flex-col px-12'>
@@ -109,7 +109,7 @@ const Signup = () => {
             <p>Already have an account?</p>
           </div>
           <div className='flex flex-col justify-center py-4 px-28'>
-            <button className='bg-green-500 rounded-md text-white'  >Go to Login</button>
+            <Link to='/' className='bg-green-500 rounded-md text-white'  >Go to Login</Link> 
           </div>
 
         </div>
