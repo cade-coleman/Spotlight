@@ -6,12 +6,9 @@ const Notifications = () => {
   return (
     <div>
       <div className=" bg-gray-300 w-full h-screen">
-
-
-
         <div name="login box"></div>
       </div>
-        <Nav />
+      <Nav />
     </div>
   );
 };

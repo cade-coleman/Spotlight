@@ -5,12 +5,11 @@ import Nav from "../components/Nav/Nav";
 const Home = () => {
   return (
     <div>
-        <Header />
+      <Header />
       <div className=" bg-gray-300 w-full h-screen">
-      
         <div name="login box"></div>
       </div>
-        <Nav />
+      <Nav />
     </div>
   );
 };
