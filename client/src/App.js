@@ -40,8 +40,10 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container"></div>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/editProfile" element={<EditProfile />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/account" element={<Account />} />
             <Route path="/editProfile" element={<EditProfile />} />
