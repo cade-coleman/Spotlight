@@ -1,14 +1,14 @@
 const { Schema, model } = require('mongoose');
 
 const postSchema = new Schema({
-    postText: {
+    PostText: {
         type: String,
         required: 'You need to leave a post!',
         minlength: 1,
         maxlength: 140,
         trim: true,
     },
-    postAuthor: {
+    PostAuthor: {
         type: String,
         required: true,
     },
@@ -46,6 +46,6 @@ postSchema.virtual('commentCount').get(function () {
     );
 });
 
-const Post = model('Post', postSchema);
+const Post = model('UserPost', postSchema);
 
 module.exports = Post;
