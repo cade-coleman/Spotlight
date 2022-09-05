@@ -69,7 +69,7 @@ function Nav() {
         ></Link>
 
         <Link
-          to="/post"
+          to="/addPost"
           onClick={handleClick3}
           className={
             isActive3 ? "newPostActive navButton" : "newPost navButton"

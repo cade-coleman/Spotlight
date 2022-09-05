@@ -1,20 +1,19 @@
 import React from "react";
+import Nav from "../components/Nav/Nav";
+import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import Content from "../components/Content/Content";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import Nav from "../components/Nav/Nav";
 
 const Account = () => {
   return (
-    <div name="backgorund" className="bg-[#EAEBE6] w-full h-screen">
+    <div name="backgorund" className="bg-[#EAEBE6] w-full">
       <div name="top section" className="">
         <div className=" flex justify-between items-center bg-[#35BDF2] text-white ">
-          <a href="http://localhost:3000/Home" className="pl-2 text-bo ">
+          <Link className="pl-2 text-bo " to="/home">
             Go to Home
-          </a>
-          <a href="http://localhost:3000/EditProfile" className="pr-2">
-            Edit Profile
-          </a>
+          </Link>
+
+          <Link className="pr-2" to="/editProfile"></Link>
         </div>
       </div>
 
