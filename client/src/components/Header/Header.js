@@ -1,22 +1,27 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-
+import "./style.css";
 
 function Header() {
   return (
-    <div>
-      <header className="flex justify-between bg-blue-500">
-        <div className="w-20 "><img src={require('./logo2.png')} alt='logo' />
+    <div className=" bgBlue">
+      <header className="flex justify-between bgBlue">
+        <div className="w-20 ">
+          <img src={require("./logo2.png")} alt="logo" />
         </div>
-        <div className="flex">
+        <div className="flex flex-row text-white">
           <div className="self-center">
             <FaSearch />
           </div>
-          <input
-            id="searchBox"
-            className="w-20 h-10 m-5 bg-transparent text-white"
-            placeholder="Search"
-          ></input>
+
+          <div className="w-30 h-10 m-5">
+            <input
+              className=" border-solid border-transparent rounded-md text-black pr-5 py-2"
+              type="text"
+              class="input"
+              placeholder="Search.."
+            ></input>
+          </div>
         </div>
       </header>
     </div>

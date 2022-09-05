@@ -31,7 +31,7 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, args) => {
+        addUser: async (parent, { username, email, password}) => {
             const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
@@ -68,6 +68,28 @@ const resolvers = {
                     { _id: postId },
                     { $push: { comments: { commentText, commentAuthor: context.user.username } } },
                     { new: true, runValidators: true }
+                );
+                return updatedPost;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removePost: async (parent, { postId }, context) => {
+            if (context.user) {
+                const Post = await UserPost.findOneAndDelete({ _id: postId });
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { posts: Post._id } }
+                );
+                return Post;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeComment: async (parent, { postId, commentId }, context) => {
+            if (context.user) {
+                const updatedPost = await UserPost.findOneAndUpdate(
+                    { _id: postId },
+                    { $pull: { comments: { _id: commentId } } },
+                    { new: true }
                 );
                 return updatedPost;
             }
