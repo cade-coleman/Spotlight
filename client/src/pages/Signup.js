@@ -11,7 +11,9 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
     email: '',
-    password: '' 
+    password: '',
+    firstName: '',
+    lastName: '', 
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -64,18 +66,18 @@ const Signup = () => {
             />
             <input className='rounded-md'
               placeholder='First Name'
-              name='first'
+              name='firstName'
               type='text'
               id= 'first'
-              value={formState.first}
+              value={formState.firstName}
               onChange={handleChange}
             />
             <input className='rounded-md'
               placeholder='Last Name'
-              name='last'
+              name='lastName'
               type='text'
               id= 'last'
-              value={formState.last}
+              value={formState.lastName}
               onChange={handleChange}
             />
             <input className='rounded-md'
