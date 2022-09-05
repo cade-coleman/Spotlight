@@ -24,7 +24,7 @@ const AddPost = () => {
             const { me } = cache.readQuery({ query: QUERY_LOGGED_IN });
             cache.writeQuery({
                 query: QUERY_LOGGED_IN,
-                data: { me: { ...me, posts: [...me.posts, addPost] } },
+                data: { loggedIn: { ...loggedIn, posts: [...loggedIn.posts, addPost] } },
             });
         },
     });
