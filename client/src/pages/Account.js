@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav/Nav";
 import { Link } from "react-router-dom";
-import { FiEdit2 } from "react-icons/fi";
 import Content from "../components/Content/Content";
 
 const Account = () => {
@@ -13,7 +12,7 @@ const Account = () => {
             Go to Home
           </Link>
 
-          <Link className="pr-2" to="/editProfile"></Link>
+          <Link className="pr-2 text-bo" to="/editProfile"></Link>
         </div>
       </div>
 
@@ -40,11 +39,12 @@ const Account = () => {
 
         <div className="bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
           <h2 className="text-lg flex justify-between ml-1">
-            About <FiEdit2 className="mr-2" />
+             About  {/* ADD TERNARY STATEMENT    <FiEdit2 className="mr-2" /> */}
           </h2>
           <form className="">
-            <input
-              className="rounded-md w-96 h-16 ml-4 bg-white"
+          {/* ADD TERNARY STATEMENT */}
+            <p
+              className="rounded-md w-4/5 bg-white h-18 h-16 ml-3"
               type="text"
               id="about"
               placeholder="Tell us about yourself"
