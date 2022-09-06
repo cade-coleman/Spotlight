@@ -27,7 +27,7 @@ const PostList = ({
                             </Link>
                         </h4>
                         <div className="card-body">
-                            <Link to={`/post/${post._id}`}>
+                            <Link to={`/posts/${post._id}`}>
                                 <p>{post.postText}</p>
                                 <p className="mb-0">
                                     Reactions: {post.reactionCount} || Click to{" "}

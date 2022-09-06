@@ -58,3 +58,37 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_POST = gql`
+  mutation removePost($postId: ID!) {
+    removePost(postId: $postId) {
+      _id
+    }
+  }
+`;
+
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($postId: ID!, $commentId: ID!) {
+    removeComment(postId: $postId, commentId: $commentId) {
+      _id
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+export const EDIT_USER = gql`
+  mutation editUser($username: String, $firstName: String, $lastName: String, $title: String, $bio: String) {
+    editUser(username: $username, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio) {
+      _id
+      username
+      firstName
+      lastName
+      title
+      bio
+    }
+  }
+`;
+
+
