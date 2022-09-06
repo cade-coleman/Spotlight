@@ -15,22 +15,25 @@ const PostList = ({
             {showTitle && <h3>{title}</h3>}
             {posts &&
                 posts.map((post) => (
-                    <div key={post._id} className="card mb-3">
-                        <h4 className="card-header">
+                    <div key={post._id} className="card m-5 bg-white">
+                        <h4 className="card-header m-2 border-slate border-b-2">
                             <Link
                                 to={`/profile/${post.postAuthor}`}
                                 style={{ fontWeight: 700 }}
-                                className="text-light"
+                                className="text-light text-lg"
                             >
-                            {post.postAuthor} <br/>
-                            posted on {post.createdAt}
+                            {post.postAuthor} 
+                            <div className="text-sm">
+                            {post.createdAt}
+                            </div>
                             </Link>
                         </h4>
-                        <div className="card-body">
-                            <Link to={`/posts/${post._id}`}>
-                                <p>{post.postText}</p>
-                                <p className="mb-0">
-                                    Reactions: {post.reactionCount} || Click to{" "}
+    
+                        <div className="card-body mb-5">
+                            <Link to={`/post/${post._id}`}>
+                                <p className="m-5">{post.postText}</p>
+                                <p className="m-3 ">
+                                    Comments {post.reactionCount} || Click to{" "}
                                     {post.reactionCount ? "see" : "start"} the
                                     
                                 </p>
