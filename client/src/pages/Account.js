@@ -78,8 +78,10 @@ const Account = () => {
             Log Out
           </a>
         </div>
+        <div className="bg-gray-300 fixed bottom-0 min-w-full">
+          <Nav />
+        </div>
       </div>
-      <Nav />
     </div>
   );
 };
