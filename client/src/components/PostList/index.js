@@ -32,7 +32,7 @@ const PostList = ({
                                 <p className="mb-0">
                                     Reactions: {post.reactionCount} || Click to{" "}
                                     {post.reactionCount ? "see" : "start"} the
-                                    discussion!
+                                    
                                 </p>
                             </Link>
                         </div>
