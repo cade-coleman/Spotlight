@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { useMutation } from "@apollo/client";
 import { LIKE_POST } from "../../utils/mutations";
 
 const PostList = ({
@@ -12,8 +11,6 @@ const PostList = ({
     if (!posts.length) {
         return <h3>No Posts Yet</h3>;
     }
-
-    const [likePost] = useMutation(LIKE_POST);
 
     return (
         <div>
@@ -40,9 +37,9 @@ const PostList = ({
                             </Link>
                             <p className="m-3 ">
                                     Comments: {post.comments.length}
-                                    <button>Likes: {post.likes.length}</button>
+                                    <button>Likes {post.likes.length}</button>
                             </p>
-                            <button>Likes: {post.likes.length}</button>
+                            <button> {post.likes.length}</button>
                         </div>
                     </div>
                 ))}

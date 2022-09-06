@@ -12,14 +12,14 @@ const Home = () => {
 
   return (
     <div>
-      <div className=" w-full h-screen">
-        <div className="fixed w-full">
+      <div className="w-full h-screen">
+        <div className="fixed min-w-full">
           <Header />
         </div>
         <br></br>
         <br></br>
         <br></br>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col min-w-full items-center justify-center">
           {loading ? (
             <div>Loading...</div>
           ) : (
