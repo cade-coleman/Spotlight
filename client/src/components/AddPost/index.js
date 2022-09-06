@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
@@ -8,8 +8,10 @@ import { QUERY_POSTS, QUERY_LOGGED_IN } from "../../utils/queries";
 import Auth from "../../utils/auth";
 
 const AddPost = () => {
-    const [postText, setPostText] = useState("");
+    const [postText, setPostText] = useState('');
+
     const [characterCount, setCharacterCount] = useState(0);
+
     const [addPost, { error }] = useMutation(ADD_POST, {
         update(cache, { data: { addPost } }) {
             try {
@@ -21,7 +23,7 @@ const AddPost = () => {
             } catch (e) {
                 console.error(e);
             }
-            const { me } = cache.readQuery({ query: QUERY_LOGGED_IN });
+            const { loggedIn } = cache.readQuery({ query: QUERY_LOGGED_IN });
             cache.writeQuery({
                 query: QUERY_LOGGED_IN,
                 data: { loggedIn: { ...loggedIn, posts: [...loggedIn.posts, addPost] } },
@@ -80,7 +82,7 @@ const AddPost = () => {
                             </button>
                         </div>
                         {error && (
-                            <div>Something went wrong...</div>
+                            <div>{error.message}</div>
                         )}
                     </form>
                 </>

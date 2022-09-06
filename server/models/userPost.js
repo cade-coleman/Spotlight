@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const postSchema = new Schema({
   PostText: {
@@ -11,6 +12,7 @@ const postSchema = new Schema({
   PostAuthor: {
     type: String,
     required: true,
+    trim: true,
   },
   createdAt: {
     type: Date,
