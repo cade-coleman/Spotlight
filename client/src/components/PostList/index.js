@@ -5,6 +5,7 @@ const PostList = ({
     posts,
     title,
     showTitle = true,
+    showUsername = true,
 }) => {
     if (!posts.length) {
         return <h3>No Posts Yet</h3>;
@@ -27,7 +28,7 @@ const PostList = ({
                             </Link>
                         </h4>
                         <div className="card-body">
-                            <Link to={`/posts/${post._id}`}>
+                            <Link to={`/Post/${post._id}`}>
                                 <p>{post.postText}</p>
                                 <p className="mb-0">
                                     Reactions: {post.reactionCount} || Click to{" "}

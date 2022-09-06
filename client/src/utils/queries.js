@@ -63,8 +63,8 @@ export const QUERY_POSTS = gql`
 `;
 
 export const QUERY_POST = gql`
-    query post($id: ID!) {
-        post(_id: $id) {
+    query post($postId: ID!) {
+        post(postId: $postId) {
             _id
             postText
             postAuthor
