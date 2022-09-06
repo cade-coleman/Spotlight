@@ -91,4 +91,55 @@ export const EDIT_USER = gql`
   }
 `;
 
+export const FOLLOW_USER = gql`
+  mutation followUser($userId: ID!) {
+    followUser(userId: $userId) {
+      _id
+      username
+      following {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const UNFOLLOW_USER = gql`
+  mutation unfollowUser($userId: ID!) {
+    unfollowUser(userId: $userId) {
+      _id
+      username
+      following {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const LIKE_POST = gql`
+  mutation likePost($postId: ID!) {
+    likePost(postId: $postId) {
+      _id
+      likes {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const UNLIKE_POST = gql`
+  mutation unlikePost($postId: ID!) {
+    unlikePost(postId: $postId) {
+      _id
+      likes {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+
 
