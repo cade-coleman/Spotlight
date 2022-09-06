@@ -20,6 +20,7 @@ const typeDefs = gql`
         postAuthor: String
         createdAt: String
         comments: [Comment]!
+        likes: [User]!
     }
 
     type Comment {
@@ -50,6 +51,10 @@ const typeDefs = gql`
         addComment(postId: ID!, commentText: String!): Post
         removePost(postId: ID!): Post
         removeComment(postId: ID!, commentId: ID!): Post
+        followUser(userId: ID!): User
+        unfollowUser(userId: ID!): User
+        likePost(postId: ID!): Post
+        unlikePost(postId: ID!): Post
     }
 `;
 

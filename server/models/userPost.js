@@ -38,6 +38,12 @@ const postSchema = new Schema({
       },
     },
   ],
+  likes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 // get total count of comments and replies on retrieval
