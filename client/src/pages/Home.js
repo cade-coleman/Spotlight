@@ -12,8 +12,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className=" bg-gray-300 w-full h-screen">
-        <div className="fixed w-full mb-5">
+      <div className=" w-full h-screen">
+        <div className="fixed w-full">
           <Header />
         </div>
         <br></br>
@@ -25,10 +25,12 @@ const Home = () => {
           ) : (
             <PostList posts={posts} title="" />
           )}
-          <div className="fixed">
-            {" "}
-            <Nav />
-          </div>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div className="bg-gray-300 fixed bottom-0 min-w-full">
+          <Nav />
         </div>
       </div>
     </div>
