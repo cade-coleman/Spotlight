@@ -1,10 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import PostList from "../components/PostList";
-import AddPost from "../components/AddPost";
+
 
 import { QUERY_POSTS } from "../utils/queries";
 
@@ -17,7 +16,6 @@ const Home = () => {
     <div>
       <Header />
       <div className=" bg-gray-300 w-full h-screen">
-        <AddPost />
         <div className="flex flex-col items-center justify-center">
           {loading ? (
             <div>Loading...</div>

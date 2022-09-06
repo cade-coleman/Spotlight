@@ -2,14 +2,14 @@ const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const postSchema = new Schema({
-  PostText: {
+  postText: {
     type: String,
     required: "You need to leave a post!",
     minlength: 1,
     maxlength: 140,
     trim: true,
   },
-  PostAuthor: {
+  postAuthor: {
     type: String,
     required: true,
     trim: true,
