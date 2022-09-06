@@ -55,7 +55,7 @@ function Nav() {
     <div className="bg-grey">
       <menu className="menu flex h-20 justify-around">
         <Link
-          to="/"
+          to="/home"
           onClick={handleClick1}
           className={
             isActive1 ? "homeButtonActive navButton" : "homeButton navButton"
