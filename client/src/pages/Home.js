@@ -4,9 +4,7 @@ import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import PostList from "../components/PostList";
 
-
 import { QUERY_POSTS } from "../utils/queries";
-
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
@@ -14,15 +12,23 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
-          <Nav />
       <div className=" bg-gray-300 w-full h-screen">
+        <div className="fixed w-full mb-5">
+          <Header />
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
         <div className="flex flex-col items-center justify-center">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <PostList posts={posts} title="" />
           )}
+          <div className="fixed">
+            {" "}
+            <Nav />
+          </div>
         </div>
       </div>
     </div>
