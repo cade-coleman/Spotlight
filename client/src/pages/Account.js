@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav/Nav";
+import LDmode from "../components/LDmode/LDmode";
 import { Link } from "react-router-dom";
 import Content from "../components/Content/Content";
 
@@ -8,9 +9,7 @@ const Account = () => {
     <div name="backgorund" className="bg-[#EAEBE6] w-full">
       <div name="top section" className="">
         <div className=" flex justify-between items-center bg-[#35BDF2] text-white ">
-          <Link className="pl-2 text-bo " to="/home">
-            Go to Home
-          </Link>
+          <LDmode />
 
           <Link className="pr-2 text-bo" to="/editProfile"></Link>
         </div>
@@ -39,10 +38,10 @@ const Account = () => {
 
         <div className="bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
           <h2 className="text-lg flex justify-between ml-1">
-             About  {/* ADD TERNARY STATEMENT    <FiEdit2 className="mr-2" /> */}
+            About {/* ADD TERNARY STATEMENT    <FiEdit2 className="mr-2" /> */}
           </h2>
           <form className="">
-          {/* ADD TERNARY STATEMENT */}
+            {/* ADD TERNARY STATEMENT */}
             <p
               className="rounded-md w-4/5 bg-white h-18 h-16 ml-3"
               type="text"
