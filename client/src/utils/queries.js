@@ -22,6 +22,29 @@ export const QUERY_USER = gql`
     }
 `;
 
+export const QUERY_USERS = gql`
+    query users {
+        users {
+            _id
+            username
+            email
+            posts {
+                _id
+                postText
+                postAuthor
+                createdAt
+                comments {
+                    _id
+                    commentText
+                    commentAuthor
+                    createdAt
+                }
+            }
+        }
+    }
+`;
+
+
 export const QUERY_POSTS = gql`
     query posts($username: String) {
         posts(username: $username) {

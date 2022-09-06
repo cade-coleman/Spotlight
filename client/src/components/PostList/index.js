@@ -35,7 +35,7 @@ const PostList = ({
                                 <p className="m-3 ">
                                     Comments {post.reactionCount} || Click to{" "}
                                     {post.reactionCount ? "see" : "start"} the
-                                    discussion!
+                                    
                                 </p>
                             </Link>
                         </div>
