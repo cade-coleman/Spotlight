@@ -14,8 +14,8 @@ const resolvers = {
       const params = username ? { username } : {};
       return UserPost.find(params).sort({ createdAt: -1 });
     },
-    post: async (parent, { _id }) => {
-      return UserPost.findOne({ _id });
+    post: async (parent, { postId }) => {
+      return UserPost.findOne({ _id: postId });
     },
     signedIn: async (parent, args, context) => {
       if (context.user) {
@@ -108,7 +108,53 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    followUser: async (parent, { username }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { following: username } },
+          { new: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    unfollowUser: async (parent, { username }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { following: username } },
+          { new: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    likePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const updatedPost = await UserPost.findOneAndUpdate(
+          { _id: postId },
+          { $addToSet: { likes: context.user.username } },
+          { new: true }
+        );
+        return updatedPost;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    unlikePost: async (parent, { postId }, context) => {
+      if (context.user) {
+        const updatedPost = await UserPost.findOneAndUpdate(
+          { _id: postId },
+          { $pull: { likes: context.user.username } },
+          { new: true }
+        );
+        return updatedPost;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
 module.exports = resolvers;
+
+

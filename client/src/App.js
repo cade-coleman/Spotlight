@@ -12,6 +12,7 @@ import Account from "./pages/Account";
 import EditProfile from "./pages/EditProfile";
 import AddNewPost from './pages/AddNewPost';
 import Notifications from "./pages/Notifications";
+import SinglePost from "./pages/SinglePost";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -48,8 +49,10 @@ function App() {
             <Route path='/addPost' element={< AddNewPost />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/account/:username" element={<Account />} />
             <Route path="/editProfile" element={<EditProfile />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/post/:postId" element={<SinglePost />} />
           </Routes>
         </div>
       </Router>

@@ -58,13 +58,17 @@ export const QUERY_POSTS = gql`
                 commentAuthor
                 createdAt
             }
+            likes {
+                _id
+                username
+            }
         }
     }
 `;
 
 export const QUERY_POST = gql`
-    query post($id: ID!) {
-        post(_id: $id) {
+    query post($postId: ID!) {
+        post(postId: $postId) {
             _id
             postText
             postAuthor
@@ -82,6 +86,38 @@ export const QUERY_POST = gql`
 export const QUERY_LOGGED_IN = gql`
     query loggedIn {
         loggedIn {
+            _id
+            username
+            email
+            posts {
+                _id
+                postText
+                postAuthor
+                createdAt
+                comments {
+                    _id
+                    commentText
+                    commentAuthor
+                    createdAt
+                }
+            }
+        }
+    }
+`;
+
+export const QUERY_LIKES = gql`
+    query likes($postId: ID!) {
+        likes(postId: $postId) {
+            _id
+            likeAuthor
+            createdAt
+        }
+    }
+`;
+
+export const QUERY_FOLLOWING = gql`
+    query following($username: String!) {
+        following(username: $username) {
             _id
             username
             email
