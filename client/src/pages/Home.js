@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import PostList from "../components/PostList";
+
 
 import { QUERY_POSTS } from "../utils/queries";
 
