@@ -110,9 +110,9 @@ const Login = (props) => {
             />
 
             {/*LOGIN BUTTON */}
-            <div className="flex flex-col justify-center py-4 px-40">
+            <div className="flex flex-col m-5 justify-center">
               <button
-                className="bg-green-500 rounded-md text-white"
+                className="bg-green-500 rounded-md text-white hover:bg-green-700"
                 type="submit"
               >
                 Login
@@ -122,14 +122,20 @@ const Login = (props) => {
         )}
         {error && <div>Login failed</div>}
         {/*CREATE AN ACCOUNT BUTTON */}
-        <p>Don't have an account?</p>
-        <div className="flex flex-col justify-center items-center py-4 px-40">
-          <a
-            href="http://localhost:3000/Signup"
-            className="bg-green-500 rounded-md text-white hover:bg-green-700"
-          >
-            Create an Account
-          </a>
+
+        <div className="flex flex-col m-5 justify-center justify-items-center">
+          <div>
+            <p className="text-center text-white">Don't have an account?</p>
+          </div>
+
+          <div className="text-center ">
+            <a
+              href="http://localhost:3000/Signup"
+              className="bg-green-500 rounded-md w-1/2 text-white hover:bg-green-700"
+            >
+              Create an Account
+            </a>
+          </div>
         </div>
       </div>
     </div>

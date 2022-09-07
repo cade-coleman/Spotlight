@@ -1,10 +1,14 @@
-import React from "react";
+import React , {useState} from "react";
 import Nav from "../components/Nav/Nav";
 import LDmode from "../components/LDmode/LDmode";
 import { Link } from "react-router-dom";
 import Content from "../components/Content/Content";
+import Modal from "../components/Modal/modal";
 
 const Account = () => {
+
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div name="backgorund" className="bg-[#EAEBE6] w-full">
       <div name="top section" className="">
@@ -12,6 +16,14 @@ const Account = () => {
           <LDmode />
 
           <Link className="pr-2 text-bo" to="/editProfile"></Link>
+          <button
+        className="openModalBtn mr-2"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        Edit Profile
+      </button>
         </div>
       </div>
 
@@ -79,9 +91,14 @@ const Account = () => {
         </div>
         <div className="bg-gray-300 fixed bottom-0 min-w-full">
           <Nav />
+          {modalOpen && <Modal setOpenModal={setModalOpen} />}
         </div>
       </div>
+
+      
     </div>
+
+    
   );
 };
 

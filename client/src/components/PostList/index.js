@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { useMutation } from "@apollo/client";
 import { LIKE_POST } from "../../utils/mutations";
 import { UNLIKE_POST } from "../../utils/mutations";
 
