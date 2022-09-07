@@ -31,11 +31,11 @@ const PostList = ({
                             </Link>
                         </h4>
     
-                        <div className="card-body mb-5">
+                        <div className="card-body space-between mb-5">
                             <Link to={`/post/${post._id}`}>
                                 <p className="m-5">{post.postText}</p>
                             </Link>
-                            <p className="m-3 ">
+                            <p className="m-3">
                                     Comments: {post.comments.length}
                                     <button> Likes {post.likes.length}</button>
                             </p>
