@@ -3,7 +3,7 @@ import Nav from "../components/Nav/Nav";
 import LDmode from "../components/LDmode/LDmode";
 import { Link } from "react-router-dom";
 import Content from "../components/Content/Content";
-import Modal from "../components/modal";
+import Modal from "../components/Modal/modal";
 
 const Account = () => {
 
