@@ -13,15 +13,16 @@ const CommentList = ({ comments }) => {
             <div className="flex-row">
                 {comments &&
                     comments.map((comment) => (
-                        <div key={comment._id} className="card mb-3">
+                        <div key={comment._id} className="card mb-3 bg-white text-center">
                             <h4 className="card-header">
                                 <span style={{ fontWeight: 700 }} className="text-light">
                                     {comment.commentAuthor} <br/>
-                                    commented on {comment.createdAt}
+                                    {/* commented on {comment.createdAt} */}
                                 </span>
                             </h4>
                             <div className="card-body">
                                 <p>{comment.commentText}</p>
+                                <p className="text-xs">{comment.createdAt}</p>
                             </div>
                         </div>
                     ))}
