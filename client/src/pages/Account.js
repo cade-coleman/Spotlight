@@ -4,12 +4,37 @@ import LDmode from "../components/LDmode/LDmode";
 import { Link } from "react-router-dom";
 import Content from "../components/Content/Content";
 import Modal from "../components/Modal/modal";
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER, QUERY_LOGGED_IN  } from "../utils/queries";
+
+import Auth from "../utils/auth";
 
 const Account = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const { username: userParam } = useParams();
+    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_LOGGED_IN, {
+        variables: { username: userParam },
+    });
+    console.log(data);
+    const user = data?.user || data?.loggedIn || {};
+    //  if username is not found, return to homepage
 
-  const [modalOpen, setModalOpen] = useState(false);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
+    // if (!user?.username) {
+    //     return (
+    //         <h4>
+    //             You need to be logged in to see this. Use the navigation links above to sign up or log in!
+    //         </h4>
+    //     );
+    // }
+
+    console.log(user);
   return (
+    
     <div name="backgorund" className="bg-[#EAEBE6] w-full">
       <div name="top section" className="">
         <div className=" flex justify-between items-center bg-[#35BDF2] text-white ">
@@ -42,7 +67,7 @@ const Account = () => {
 
       <div name="bioDescription" className=" ">
         <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 ml-16 mr-14">
-          <h1 className="text-3xl text-center">John Doe</h1>
+          <h1 className="text-3xl text-center">{}</h1>
           <p className="text-center">
             Musician || Self-taught guitarrist and drum player
           </p>

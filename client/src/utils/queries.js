@@ -98,12 +98,6 @@ export const QUERY_LOGGED_IN = gql`
                 postText
                 postAuthor
                 createdAt
-                comments {
-                    _id
-                    commentText
-                    commentAuthor
-                    createdAt
-                }
             }
         }
     }

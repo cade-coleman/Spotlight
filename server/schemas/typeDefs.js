@@ -15,7 +15,7 @@ const typeDefs = gql`
     }
 
     type Post {
-        _id: ID!
+        _id: ID
         postText: String
         postAuthor: String
         createdAt: String
@@ -24,7 +24,7 @@ const typeDefs = gql`
     }
 
     type Comment {
-        _id: ID!
+        _id: ID
         commentText: String
         commentAuthor: String
         createdAt: String
@@ -40,7 +40,7 @@ const typeDefs = gql`
         user(username: String!): User
         posts(username: String): [Post]
         post(postId: ID!): Post
-        signedIn: User
+        loggedIn: User
     }
 
     type Mutation {
