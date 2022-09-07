@@ -16,7 +16,6 @@ const Account = () => {
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_LOGGED_IN, {
         variables: { username: userParam },
     });
-    console.log(data);
     const user = data?.user || data?.loggedIn || {};
     //  if username is not found, return to homepage
 
@@ -24,15 +23,18 @@ const Account = () => {
         return <div>Loading...</div>;
     }
 
-    // if (!user?.username) {
-    //     return (
-    //         <h4>
-    //             You need to be logged in to see this. Use the navigation links above to sign up or log in!
-    //         </h4>
-    //     );
-    // }
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+      return <Navigate to="/me" />;
+    }
 
-    console.log(user);
+    if (!user?.username) {
+        return (
+            <h4>
+                You need to be logged in to see this. Use the navigation links above to sign up or log in!
+            </h4>
+        );
+    }
+
   return (
     
     <div name="backgorund" className="bg-[#EAEBE6] w-full">
