@@ -58,6 +58,7 @@ const AddPost = () => {
         <div>
             {Auth.loggedIn() ? (
                 <>
+                    <p className="font-bold">Make a post</p>
                     <p className="m-0" >
                         Character Count: {characterCount}/140
                     </p>
@@ -66,18 +67,18 @@ const AddPost = () => {
                         onSubmit={handleFormSubmit}
                     >
                         <div className="col-12 col-md-9">
-                            <textarea
+                            <textarea 
                                 name="postText"
                                 placeholder="Here's a new post..."
                                 value={postText}
-                                className="form-input w-100"
+                                className="form-input w-[450px] h-[200px] rounded-md"
                                 style={{ lineHeight: "1.5", resize: "vertical" }}
                                 onChange={handleChange}
                             ></textarea>
                         </div>
 
                         <div className="col-12 col-md-3">
-                            <button className="btn btn-primary btn-block py-3" type="submit">
+                            <button className=" bg-blue-700 rounded-md w-[80px] h-[40px] hover:bg-blue-500 text-white " type="submit">
                                 Submit
                             </button>
                         </div>
