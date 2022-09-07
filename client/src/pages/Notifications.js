@@ -13,8 +13,8 @@ const Notifications = () => {
           <div className="text-lg ml-2 font-bold">
             <h1>Notifications</h1>
 
-            <div className="bg-gray-50 h-[630px] w-[406px] rounded-md">
-              <p className="ml-2">New</p>
+            <div className="bg-white h-[600px] w-full rounded-md">
+              <p className="ml-auto">New</p>
 
             </div>
           </div>

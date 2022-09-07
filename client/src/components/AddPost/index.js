@@ -59,9 +59,6 @@ const AddPost = () => {
             {Auth.loggedIn() ? (
                 <>
                     <p className="font-bold">Make a post</p>
-                    <p className="m-0" >
-                        Character Count: {characterCount}/140
-                    </p>
                     <form
                         className="flex-row justify-center justify-space-between-md align-stretch"
                         onSubmit={handleFormSubmit}
@@ -71,11 +68,14 @@ const AddPost = () => {
                                 name="postText"
                                 placeholder="Here's a new post..."
                                 value={postText}
-                                className="form-input w-[450px] h-[200px] rounded-md"
+                                className="form-input w-[290px] h-[200px] rounded-md"
                                 style={{ lineHeight: "1.5", resize: "vertical" }}
                                 onChange={handleChange}
                             ></textarea>
                         </div>
+                    <p className="-mt-7" >
+                        Character Count: {characterCount}/140
+                    </p>
 
                         <div className="col-12 col-md-3">
                             <button className=" bg-blue-700 rounded-md w-[80px] h-[40px] hover:bg-blue-500 text-white " type="submit">
