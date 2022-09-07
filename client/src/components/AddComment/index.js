@@ -38,20 +38,21 @@ const AddComment = ({ postId }) => {
         <div>
             {Auth.loggedIn() && (
                 <div>
-                    <p className={`m-0 ${characterCount === 140 || error ? "text-error" : ""}`}>
-                        Character Count: {characterCount}/140
-                        {error && <span className="ml-2">Something went wrong...</span>}
-                    </p>
+                    
                     <form className="flex-row justify-center justify-space-between-md align-stretch"
                         onSubmit={handleFormSubmit}
                     >
                         <textarea
                             placeholder="Leave a comment..."
                             name="commentText"
-                            className="form-input col-12 col-md-9"
+                            className="form-input w-full col-12 col-md-9"
                             value={commentText}
                             onChange={handleChange}
                         ></textarea>
+                        <p className={`m-0 ${characterCount === 140 || error ? "text-error" : ""}`}>
+                        Character Count: {characterCount}/140
+                        {error && <span className="ml-2">Something went wrong...</span>}
+                    </p>
                         <button className="btn col-12 col-md-3" type="submit">
                             Submit
                         </button>

@@ -44,16 +44,27 @@ const typeDefs = gql`
     }
 
     type Mutation {
+
         addUser(username: String!, firstName: String! , lastName: String! , email: String!, password: String!): Auth
+        
         editUser(username: String, firstName: String , lastName: String , title: String, bio: String): User
+        
         login(email: String!, password: String!): Auth
+        
         addPost(postText: String!): Post
+        
         addComment(postId: ID!, commentText: String!): Post
+        
         removePost(postId: ID!): Post
+        
         removeComment(postId: ID!, commentId: ID!): Post
+        
         followUser(userId: ID!): User
+        
         unfollowUser(userId: ID!): User
+        
         likePost(postId: ID!): Post
+        
         unlikePost(postId: ID!): Post
     }
 `;
