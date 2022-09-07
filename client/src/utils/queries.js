@@ -79,6 +79,10 @@ export const QUERY_POST = gql`
                 commentAuthor
                 createdAt
             }
+            likes {
+                _id
+                username
+            }
         }
     }
 `;
@@ -101,16 +105,6 @@ export const QUERY_LOGGED_IN = gql`
                     createdAt
                 }
             }
-        }
-    }
-`;
-
-export const QUERY_LIKES = gql`
-    query likes($postId: ID!) {
-        likes(postId: $postId) {
-            _id
-            likeAuthor
-            createdAt
         }
     }
 `;

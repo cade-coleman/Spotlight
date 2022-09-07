@@ -26,6 +26,7 @@ const PostList = ({
         }
     };
 
+
     const handleUnlikeClick = async (postId) => {
         try {
             await unlikePost({
@@ -58,12 +59,15 @@ const PostList = ({
                         <div className="card-body mb-5">
                             <Link to={`/post/${post._id}`}>
                                 <p className="m-5">{post.postText}</p>
+                                <p>Comments: {post.comments.length} </p>
                             </Link>
                             <p className="m-3 ">
-                                    Comments: {post.comments.length}
-                                    <button
-                                    onClick={() => handleLikeClick(post._id)}
-                                    >Likes: {post.likes.length}</button>
+                                <button className="btn btn-block btn-primary" onClick={() => handleLikeClick(post._id)}>
+                                    Like {post.likes.length}  
+                                </button>
+                                <button className="btn btn-block btn-primary" onClick={() => handleUnlikeClick(post._id)}>
+                                    dislike
+                                </button>            
                             </p>
                         </div>
                     </div>
