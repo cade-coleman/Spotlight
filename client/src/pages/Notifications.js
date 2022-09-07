@@ -5,8 +5,20 @@ import Nav from "../components/Nav/Nav";
 const Notifications = () => {
   return (
     <div>
-      <div className="w-full h-screen">
-        <div name="login box"></div>
+      <div className="w-full h-screen bg-gray-200">
+        <div name="login box">
+          <Header/>
+        </div>
+        <div name="notification section">
+          <div className="text-lg ml-2 font-bold">
+            <h1>Notifications</h1>
+
+            <div className="bg-gray-50 h-[630px] w-[406px] rounded-md">
+              <p className="ml-2">New</p>
+
+            </div>
+          </div>
+        </div>
         <div className="bg-gray-300 fixed bottom-0 min-w-full">
           <Nav />
         </div>

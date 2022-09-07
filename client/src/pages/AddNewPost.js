@@ -10,7 +10,7 @@ const AddNewPost = () => {
 
   return (
     <div>
-      <div className="w-full h-screen">
+      <div className="w-full h-screen bg-gray-300">
       <Header />
         <div className="h-2/3 flex flex-col items-center justify-center">
           <AddPost />
