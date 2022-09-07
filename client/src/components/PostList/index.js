@@ -37,9 +37,9 @@ const PostList = ({
                             </Link>
                             <p className="m-3 ">
                                     Comments: {post.comments.length}
-                                    <button>Likes {post.likes.length}</button>
+                                    <button> Likes {post.likes.length}</button>
                             </p>
-                            <button> {post.likes.length}</button>
+                            
                         </div>
                     </div>
                 ))}
