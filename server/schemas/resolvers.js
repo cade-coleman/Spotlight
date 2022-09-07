@@ -12,7 +12,7 @@ const resolvers = {
     },
     user: async (parent, { username }, context) => {
       if (context.user) {
-        const foundUser = await User.findOne({ username }).populate("posts");
+        const foundUser = await User.findOne({ username: username }).populate("posts");
 
         return foundUser;
       }
@@ -140,7 +140,7 @@ const resolvers = {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
           { _id: postId },
-          { $addToSet: { likes: context.user.username } },
+          { $addToSet: { likes: context.user._id} },
           { new: true }
         );
         return updatedPost;
@@ -151,7 +151,7 @@ const resolvers = {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
           { _id: postId },
-          { $pull: { likes: context.user.username } },
+          { $pull: { likes: context.user._id } },
           { new: true }
         );
         return updatedPost;
