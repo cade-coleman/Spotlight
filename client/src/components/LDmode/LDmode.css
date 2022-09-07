@@ -1,9 +1,4 @@
-* {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
+
 :root {
 	--hue: 223;
 	--bg: hsl(var(--hue),10%,100%);
@@ -12,20 +7,6 @@
 	--primaryT: hsla(var(--hue),90%,55%,0);
 	--transDur: 0.3s;
 	font-size: calc(16px + (32 - 16) * (100vw - 320px) / (1280 - 320));
-}
-html,
-body {
-	/* background-color: var(--bg); */
-}
-body,
-input {
-	font: 1em/1.5 Fredoka, sans-serif;
-}
-body {
-	/* color: var(--fg);
-	height: 100vh;
-	display: grid;
-	place-items: center; */
 }
 
 /* Default */
