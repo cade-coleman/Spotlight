@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Spotlight
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Spotlight is a social media that has a focus in artists, musicians, bands, and other similar things! [See the official phone-based application here!:](placeholder)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Table of Contents:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
 
-### `npm run build`
+### Homepage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <img src="./screenshots/x" alt="Homepage"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### An Example of a Post
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  <img src="./screenshots/x" alt="Post"/>
+  
+### Notifications
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  <img src="./screenshots/x" alt="Notifications"/>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://github.com/cade-coleman/Spotlight.git
 
-### Code Splitting
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Within GitHub, navigate to the main page of the repository.
 
-### Analyzing the Bundle Size
+2. Click the Clone or download button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Copy the clone URL for the repository.
 
-### Making a Progressive Web App
+4. Open Terminal or CMD Prompt(Windows).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. Change your current working directory to the location where you'd like the cloned directory be stored.
 
-### Advanced Configuration
+6. Type git clone, and then paste the URL you copied in Step 3.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+7. git clone https://github.com/cade-coleman/Spotlight
 
-### Deployment
+8. Press Enter and a new local cloned repository will be created. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Browser support
 
-### `npm run build` fails to minify
+| Chrome | 
+| --- | 
+| 24+ | 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Deployment
+
+In addition to being deployed on heroku for a limited time, you can locally host this application through one of your local device's PORTs!
+
+1. Run npm run develop in the command line/terminal. Once the server is running, 
+
+2. Navigate to localhost:{'selected PORT'} in your desired browser
+
+## Built With
+
+* []()
+* []()
+* []()
+* []()
+
+## Authors
+
+* **Austin Murray** - [GitHub](https://github.com/Austinjm121)
+* **Aileen Bryand** - [GitHub](https://github.com/aileenbryand)
+* **Cade Coleman** - [GitHub](https://github.com/cade-coleman)
+* **Dawson White** - [GitHub](https://github.com/TheTrueMop)
+
+## Development
+
+As with any project, we started with just our ideas. Our ideas of how we wanted the app to look are below:
+
+### Home Screen:
+
+  <img src="./screenshots/homepage.png" alt="Home Page"/>
+
+
+### Sign up/Sign in page:
+
+  <img src="./screenshots/loginpage.png" alt="Login and Signup Page"/>
+
+
+### Account page
+
+  <img src="./screenshots/profilepage.png" alt="Profile Page"/>
