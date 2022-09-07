@@ -3,17 +3,38 @@ import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { LIKE_POST } from "../../utils/mutations";
+import { UNLIKE_POST } from "../../utils/mutations";
 
 const PostList = ({
     posts,
     title,
     showTitle = true,
 }) => {
+    const [likePost] = useMutation(LIKE_POST);
+    const [unlikePost] = useMutation(UNLIKE_POST);
     if (!posts.length) {
         return <h3>No Posts Yet</h3>;
     }
 
-    const [likePost] = useMutation(LIKE_POST);
+    const handleLikeClick = async (postId) => {
+        try {
+            await likePost({
+                variables: { postId },
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    const handleUnlikeClick = async (postId) => {
+        try {
+            await unlikePost({
+                variables: { postId },
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     return (
         <div>
@@ -40,9 +61,10 @@ const PostList = ({
                             </Link>
                             <p className="m-3 ">
                                     Comments: {post.comments.length}
-                                    <button>Likes: {post.likes.length}</button>
+                                    <button
+                                    onClick={() => handleLikeClick(post._id)}
+                                    >Likes: {post.likes.length}</button>
                             </p>
-                            <button>Likes: {post.likes.length}</button>
                         </div>
                     </div>
                 ))}
