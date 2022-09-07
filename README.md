@@ -14,7 +14,6 @@ Spotlight is a social media that has a focus in artists, musicians, bands, and o
 - [Deployment](#deployment)
 - [Built With](#built-with)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
 
 ### Homepage
 
@@ -72,10 +71,12 @@ In addition to being deployed on heroku for a limited time, you can locally host
 
 ## Built With
 
-* []()
-* []()
-* []()
-* []()
+* [React](https://reactjs.org/)
+* [Express](https://expressjs.com/)
+* [Mongo DB](https://www.mongodb.com/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Google Fonts](https://fonts.google.com/about)
+* [Adobe Color](https://color.adobe.com/)
 
 ## Authors
 
