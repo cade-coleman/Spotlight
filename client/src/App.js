@@ -43,7 +43,7 @@ function App() {
           <div className="container"></div>
           <Routes>
             <Route path="/account" element={<Account />} />
-            <Route path="/editProfile" element={<EditProfile />} />
+            <Route path="/account/editProfile" element={<EditProfile />} />
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Login />} />
             <Route path='/addPost' element={< AddNewPost />} />
