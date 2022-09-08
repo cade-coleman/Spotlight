@@ -36,7 +36,7 @@ const Account = () => {
     }
   return (
     
-    <div name="backgorund" className="bg-[#EAEBE6] w-full">
+    <div name="backgorund" className="bg-[#D9D9D9] w-full">
       {/* Dark/Light Mode Btn and Edit Profile Link */}
       <div name="top section" className="">
         <div className=" flex justify-between items-center bg-[#335AA6] text-white ">
@@ -54,7 +54,7 @@ const Account = () => {
       </div>
 
       <div name="bioDescription" className=" ">
-        <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 ml-16 mr-14">
+        <div className=" bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 ml-16 mr-14">
           <h1 className="text-3xl text-center">{user.username}</h1>
           <p className="text-center">
             {user.firstName} {user.lastName}
@@ -67,14 +67,15 @@ const Account = () => {
           </h2>
           <form className="">
             {/* ADD TERNARY STATEMENT */}
-            <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
+            <p className="rounded-md w-98 bg-white h-16 mr-2 ml-2 text-gray-400 text-sm">
               {user.bio}
+              Add a description
             </p>
           </form>
         </div>
 
         <div>
-          <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
+          <div className=" bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
             <h2 className="text-lg">Posts</h2>
             {loading ? (
               <div>Loading...</div>
@@ -92,8 +93,9 @@ const Account = () => {
             <h2 className="ml-1 text-lg">Contact Me</h2>
             <form className="">
             {/* ADD TERNARY STATEMENT */}
-            <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
+            <p className="rounded-md w-98 bg-white h-16 mr-2 ml-2 color-black text-gray-400 text-sm">
               {user.bio}
+              Add contact information 
             </p>
           </form>
           </div>

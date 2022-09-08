@@ -48,9 +48,10 @@ const EditProfile = () => {
         
         {data ? (
           <p>
-            Success! You may now head{" "}
-            <Link to="/account">back to your account.</Link>
+            Success! You may now head back to your{" "}
+            <Link to="/account" className="text-green-500 text-bold"> account.</Link>
           </p>
+          
         ) : (
           <form className="mt-4" onSubmit={handleFormSubmit}>
         <div className="title  mt-10 ml-10 flex flex-row  ">
