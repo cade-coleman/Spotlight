@@ -10,6 +10,7 @@ const resolvers = {
         .populate("posts")
         .populate("following");
     },
+    // Query users
     user: async (parent, { username }, context) => {
       if (context.user) {
         const foundUser = await User.findOne({ username: username }).populate("posts");
@@ -19,13 +20,16 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    // Query posts
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return UserPost.find(params).sort({ createdAt: -1 });
     },
+    // Query single post
     post: async (parent, { postId }) => {
       return UserPost.findOne({ _id: postId });
     },
+
     loggedIn: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('posts');
@@ -35,11 +39,14 @@ const resolvers = {
   },
 
   Mutation: {
+    //  Add a user Mutation
     addUser: async (parent, { username, firstName, lastName, email, password }) => {
       const user = await User.create({ username, firstName, lastName, email, password });
       const token = signToken(user);
       return { token, user };
     },
+
+    // Login mutation, get asigned a token
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
@@ -52,6 +59,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    // Add post Mutation
     addPost: async (parent, { postText }, context) => {
       if (context.user) {
         const Post = await UserPost.create({
@@ -66,6 +75,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // Add comment mutation
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
@@ -81,6 +92,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // Remove post mutation
     removePost: async (parent, { postId }, context) => {
       if (context.user) {
         const Post = await UserPost.findOneAndDelete({ _id: postId });
@@ -92,6 +105,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // remove comment mutation
     removeComment: async (parent, { postId, commentId }, context) => {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
@@ -114,6 +129,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // Follower Mutation, follow another user
     followUser: async (parent, { username }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -125,6 +142,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // unfollow a user
     unfollowUser: async (parent, { username }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -136,6 +155,8 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    // Like post
     likePost: async (parent, { postId }, context) => {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
@@ -146,7 +167,9 @@ const resolvers = {
         return updatedPost;
       }
       throw new AuthenticationError("You need to be logged in!");
-    },
+    }, 
+
+    // remove like from post
     unlikePost: async (parent, { postId }, context) => {
       if (context.user) {
         const updatedPost = await UserPost.findOneAndUpdate(
