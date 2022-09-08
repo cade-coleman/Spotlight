@@ -30,6 +30,13 @@ const userSchema = new Schema({
     minlength: 1,
     maxlength: 280,
   },
+  contact: {
+    type: String,
+    required: false,
+    trim: true,
+    minlength: 1,
+    maxlength: 140,
+  },
   email: {
     type: String,
     required: true,

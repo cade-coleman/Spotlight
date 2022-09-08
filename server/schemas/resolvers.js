@@ -118,13 +118,11 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-
-    // Edit user mutation
-    editUser: async (parent, { username, firstName, lastName, title, bio }, context) => {
+    editUser: async (parent, {firstName, lastName, title, bio }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $set: { username, firstName, lastName, title, bio } },
+          { $set: {firstName, lastName, title, bio } },
           { new: true }
         );
         return updatedUser;

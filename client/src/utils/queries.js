@@ -3,21 +3,12 @@ import { gql } from "@apollo/client";
 export const QUERY_USER = gql`
     query user($username: String!) {
         user(username: $username) {
-            _id
             username
+            firstName
+            lastName
+            title
+            bio
             email
-            posts {
-                _id
-                postText
-                postAuthor
-                createdAt
-                comments {
-                    _id
-                    commentText
-                    commentAuthor
-                    createdAt
-                }
-            }
         }
     }
 `;
@@ -90,15 +81,12 @@ export const QUERY_POST = gql`
 export const QUERY_LOGGED_IN = gql`
     query loggedIn {
         loggedIn {
-            _id
             username
+            firstName
+            lastName
+            title
+            bio
             email
-            posts {
-                _id
-                postText
-                postAuthor
-                createdAt
-            }
         }
     }
 `;

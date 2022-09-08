@@ -79,10 +79,8 @@ export const REMOVE_COMMENT = gql`
 `;
 
 export const EDIT_USER = gql`
-  mutation editUser($username: String, $firstName: String, $lastName: String, $title: String, $bio: String) {
-    editUser(username: $username, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio) {
-      _id
-      username
+  mutation editUser($firstName: String, $lastName: String, $title: String, $bio: String) {
+    editUser(firstName: $firstName, lastName: $lastName, title: $title, bio: $bio) {
       firstName
       lastName
       title
@@ -92,10 +90,8 @@ export const EDIT_USER = gql`
 `;
 
 export const FOLLOW_USER = gql`
-  mutation followUser($userId: ID!) {
-    followUser(userId: $userId) {
-      _id
-      username
+  mutation followUser($username: String!) {
+    followUser(username: $username) {
       following {
         _id
         username
@@ -105,10 +101,8 @@ export const FOLLOW_USER = gql`
 `;
 
 export const UNFOLLOW_USER = gql`
-  mutation unfollowUser($userId: ID!) {
-    unfollowUser(userId: $userId) {
-      _id
-      username
+  mutation unfollowUser($username: String!) {
+    unfollowUser(username: $username) {
       following {
         _id
         username
