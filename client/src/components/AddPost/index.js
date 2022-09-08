@@ -78,7 +78,7 @@ const AddPost = () => {
                     </p>
 
                         <div className="col-12 col-md-3">
-                            <button className=" bg-blue-700 rounded-md w-2/5 h-[40px] hover:bg-blue-500 text-white " href='/home' type="submit">
+                            <button className=" bg-blue-700 rounded-md w-2/5 h-[40px] hover:bg-blue-500 text-white "type="submit">
                                 Submit
                             </button>
                         </div>
