@@ -42,7 +42,7 @@ const Signup = () => {
 
   return (
 
-    <div className=' bg-[#10133F] w-full h-screen'>
+    <div className=' bg-[#335AA6] w-full h-screen'>
         <div
         style={{ backgroundImage: `url(${Logo})`}}
         className='content-div flex justify-center items-center'></div>
@@ -56,7 +56,7 @@ const Signup = () => {
             </p>
           ) : (
           <form onSubmit={handleFormSubmit} className='flex flex-col px-12'>
-            <input className='rounded-md'
+            <input className='rounded-md mb-1'
               placeholder='Username'
               name='username'
               type='text'
@@ -64,7 +64,7 @@ const Signup = () => {
               value={formState.username}
               onChange={handleChange}
             />
-            <input className='rounded-md'
+            <input className='rounded-md mb-1'
               placeholder='First Name'
               name='firstName'
               type='text'
@@ -72,7 +72,7 @@ const Signup = () => {
               value={formState.firstName}
               onChange={handleChange}
             />
-            <input className='rounded-md'
+            <input className='rounded-md mb-1'
               placeholder='Last Name'
               name='lastName'
               type='text'
@@ -80,7 +80,7 @@ const Signup = () => {
               value={formState.lastName}
               onChange={handleChange}
             />
-            <input className='rounded-md'
+            <input className='rounded-md mb-1'
               placeholder='Email'
               name='email'
               type='text'
@@ -98,17 +98,17 @@ const Signup = () => {
             />
           
             {/*Creat Acc Btn */}
-            <div className='flex flex-col justify-center py-4 px-28'>
-              <button className='bg-green-500 rounded-md text-white' type='submit' >Create account</button>
+            <div className='flex flex-col justify-center py-4 px-24'>
+              <button className='bg-green-500 rounded-md w-28 text-white' type='submit' >Create account</button>
             </div> 
           </form>
           )}
           {error && (<div>Sign up failed</div>)}
           {/*Go to Login Page */}
-          <div className='flex flex-col justify-center py-4 px-28 text-white'>
+          <div className='flex flex-col justify-center py-4 px-24 text-white'>
             <p>Already have an account?</p>
           </div>
-          <div className='flex flex-col justify-center py-4 px-28'>
+          <div className='flex flex-col justify-center text-center py-4 px-28'>
             <Link to='/' className='bg-green-500 rounded-md text-white'  >Go to Login</Link> 
           </div>
 

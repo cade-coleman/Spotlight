@@ -65,7 +65,7 @@ const Login = (props) => {
   //   e.preventDefault();
   // }
   return (
-    <div className=" bg-[#10133F] w-full h-screen">
+    <div className=" bg-[#2A558C] w-full h-screen">
       {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
       {/*LOGO */}
       <div
@@ -76,7 +76,7 @@ const Login = (props) => {
       {/*LOGIN BOX */}
       <div name="login box">
         {data ? (
-          <p>
+          <p className="text-white text-center ">
             Success! You may now head{" "}
             <Link to="/dashboard">back to the dashboard.</Link>
           </p>
@@ -112,7 +112,7 @@ const Login = (props) => {
             {/*LOGIN BUTTON */}
             <div className="flex flex-col m-5 justify-center">
               <button
-                className="bg-green-500 rounded-md text-white hover:bg-green-700"
+                className="bg-green-500 rounded-md w- text-white hover:bg-green-700"
                 type="submit"
               >
                 Login

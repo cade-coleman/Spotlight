@@ -52,7 +52,7 @@ function Nav() {
   };
 
   return (
-    <div className="bg-grey">
+    <div className="bg-[#F2F2F2] border-solid border-2">
       <menu className="menu flex h-20 justify-around">
         <Link
           to="/home"

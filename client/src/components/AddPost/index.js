@@ -58,7 +58,7 @@ const AddPost = () => {
         <div>
             {Auth.loggedIn() ? (
                 <>
-                    <p className="font-bold">Make a post</p>
+                    <p className="font-bold">Share</p>
                     <form
                         className="flex-row justify-center justify-space-between-md align-stretch"
                         onSubmit={handleFormSubmit}
@@ -78,8 +78,8 @@ const AddPost = () => {
                     </p>
 
                         <div className="col-12 col-md-3">
-                            <button className=" bg-blue-700 rounded-md w-2/5 h-[40px] hover:bg-blue-500 text-white " href='/home' type="submit">
-                                Submit
+                            <button className=" bg-blue-700 rounded-md mt-2 w-2/5 h-[40px] hover:bg-blue-500 text-white " href='/home' type="submit">
+                                Post
                             </button>
                         </div>
                         {error && (
@@ -88,7 +88,7 @@ const AddPost = () => {
                     </form>
                 </>
             ) : (
-                <p>
+                <p className="text-center text-black">
                     You need to be logged in to share your thoughts. Please{" "}
                     <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
                 </p>

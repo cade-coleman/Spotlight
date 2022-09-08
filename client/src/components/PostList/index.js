@@ -40,7 +40,7 @@ const PostList = ({ posts, title, showTitle = true }) => {
       {showTitle && <h3>{title}</h3>}
       {posts &&
         posts.map((post) => (
-          <div key={post._id} className="card min-w-300 bg-white">
+          <div key={post._id} className="card min-w-300 bg-white rounded-md">
             <h4 className="card-header m-4 border-slate border-b-2">
               <Link
                 to={`/profile/${post.postAuthor}`}

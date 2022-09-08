@@ -10,7 +10,7 @@ function Modal({ setOpenModal }) {
             onClick={() => {
               setOpenModal(false);
             }}
-          className="bg-red-600 w-8 rounded-md text-white">
+          className="bg-red-600 w-8 rounded-md text-white ">
             X
           </button>
         </div>
@@ -22,7 +22,7 @@ function Modal({ setOpenModal }) {
             <form className="mt-4">
                 <label className="ml-1">Firts Name</label>
                 <input
-                    className="rounded-md bg-gray-50 ml-1"
+                    className="rounded-md bg-gray-100 ml-1"
                     type="text"
                     id="firstName"
                     name="firstName"
@@ -32,7 +32,7 @@ function Modal({ setOpenModal }) {
             <form className="mt-4">
                 <label className="ml-1">Last Name</label>
                 <input
-                    className="rounded-md bg-gray-50 ml-1"
+                    className="rounded-md bg-gray-100 ml-1"
                     type="text"
                     id="lastName"
                     name="lastName"
@@ -42,7 +42,7 @@ function Modal({ setOpenModal }) {
             <form className="mt-4">
                 <label className="ml-1">Title</label>
                 <input
-                    className="rounded-md bg-gray-50 ml-1"
+                    className="rounded-md bg-gray-100 ml-1"
                     type="text"
                     id="title"
                     name="title"
@@ -51,7 +51,7 @@ function Modal({ setOpenModal }) {
             </form>
             <form className="mt-4">
                 <label className="ml-1">Description</label>
-                <textarea className=" bg-gray-50 ml-1 rounded-md" id="w3review" name="w3review" rows="3" cols="30"></textarea>
+                <textarea className=" bg-gray-100 ml-1 rounded-md" id="w3review" name="w3review" rows="3" cols="30"></textarea>
             </form>
         </div>
         <div className="footer absolute inset-x-0 bottom-0 ml-10 mb-2  ">
