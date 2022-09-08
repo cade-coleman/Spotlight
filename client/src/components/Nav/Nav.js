@@ -7,7 +7,7 @@ function Nav() {
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
-  const [isActive4, setIsActive4] = useState(false);
+  
   const [isActive5, setIsActive5] = useState(false);
 
   const handleClick1 = (event) => {
@@ -15,7 +15,7 @@ function Nav() {
     setIsActive1(true);
     setIsActive2(false);
     setIsActive3(false);
-    setIsActive4(false);
+    
     setIsActive5(false);
   };
   const handleClick2 = (event) => {
@@ -23,7 +23,7 @@ function Nav() {
     setIsActive2(true);
     setIsActive1(false);
     setIsActive3(false);
-    setIsActive4(false);
+    
     setIsActive5(false);
   };
   const handleClick3 = (event) => {
@@ -31,12 +31,12 @@ function Nav() {
     setIsActive3(true);
     setIsActive1(false);
     setIsActive2(false);
-    setIsActive4(false);
+    
     setIsActive5(false);
   };
   const handleClick4 = (event) => {
     // 👇️ toggle isActive state on click
-    setIsActive4(true);
+   
     setIsActive1(false);
     setIsActive2(false);
     setIsActive3(false);
@@ -48,11 +48,11 @@ function Nav() {
     setIsActive1(false);
     setIsActive2(false);
     setIsActive3(false);
-    setIsActive4(false);
+    
   };
 
   return (
-    <div className="bg-grey">
+    <div className="bg-[#F2F2F2] border-solid border-2">
       <menu className="menu flex h-20 justify-around">
         <Link
           to="/home"
@@ -76,11 +76,7 @@ function Nav() {
           }
         ></Link>
 
-        <Link
-          to=""
-          onClick={handleClick4}
-          className={isActive4 ? "dmActive navButton" : "dm navButton"}
-        ></Link>
+        
 
         <Link
           to="/account"

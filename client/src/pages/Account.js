@@ -36,10 +36,10 @@ const Account = () => {
     }
   return (
     
-    <div name="backgorund" className="bg-[#EAEBE6] w-full">
+    <div name="backgorund" className="bg-[#D9D9D9] w-full">
       {/* Dark/Light Mode Btn and Edit Profile Link */}
       <div name="top section" className="">
-        <div className=" flex justify-between items-center bg-[#35BDF2] text-white ">
+        <div className=" flex justify-between items-center bg-[#335AA6] text-white ">
           <LDmode />
           <Link className="pr-2 text-bo" to="/account/editProfile">Edit Profile</Link>
         </div>
@@ -47,34 +47,35 @@ const Account = () => {
       {/* Profile Pic */}
       <div name="profileCover" className="h-[320px] relative">
         <img
-          className="w-[295px] h-[300px] rounded-[50px] object-cover absolute m-auto pt-0 left-0 right-0 top-0 bottom-0"
+          className="w-[300px] h-[400px] rounded-[50px] object-cover absolute m-auto pt-0 left-0 right-0 top-0 bottom-0"
           src={require("../assets/usericon.png")}
           alt="cover"
         />
       </div>
 
       <div name="bioDescription" className=" ">
-        <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 ml-16 mr-14">
+        <div className=" bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 ml-16 mr-14">
           <h1 className="text-3xl text-center">{user.username}</h1>
           <p className="text-center">
             {user.firstName} {user.lastName}
           </p>
         </div>
 
-        <div className="bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
+        <div className="bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
           <h2 className="text-lg flex justify-between ml-1">
             About 
           </h2>
           <form className="">
             {/* ADD TERNARY STATEMENT */}
-            <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
+            <p className="rounded-md w-98 bg-white h-16 mr-2 ml-2 text-gray-400 text-sm">
               {user.bio}
+              Add a description
             </p>
           </form>
         </div>
 
         <div>
-          <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
+          <div className=" bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
             <h2 className="text-lg">Posts</h2>
             {loading ? (
               <div>Loading...</div>
@@ -86,14 +87,15 @@ const Account = () => {
 
         <div
           name="contac"
-          className="bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4"
+          className="bg-[#F2F2F2] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4"
         >
           <div>
             <h2 className="ml-1 text-lg">Contact Me</h2>
             <form className="">
             {/* ADD TERNARY STATEMENT */}
-            <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
+            <p className="rounded-md w-98 bg-white h-16 mr-2 ml-2 color-black text-gray-400 text-sm">
               {user.bio}
+              Add contact information 
             </p>
           </form>
           </div>

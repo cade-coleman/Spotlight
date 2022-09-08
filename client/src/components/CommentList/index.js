@@ -7,7 +7,7 @@ const CommentList = ({ comments }) => {
 
     return (
         <div>
-            <h4 className="p-5 display-inline-block" style={{ borderBottom: "1px dotted black" }}>
+            <h4 className="p-5 display-inline-block font-bold" style={{ borderBottom: "1px dotted black" }}>
                 Comments
             </h4>
             <div className="flex-row">

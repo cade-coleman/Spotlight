@@ -4,13 +4,13 @@ import "./style.css";
 
 function Header() {
   return (
-    <div className=" bgBlue">
-      <header className="flex justify-between bgBlue">
+    <div className=" ">
+      <header className="flex justify-between bg-[#335AA6]">
         <div className="w-20 ">
           <img src={require("./logo2.png")} alt="logo" />
         </div>
-        <div className="flex flex-row text-white">
-          <div className="self-center">
+        <div className="flex flex-row  text-white">
+          <div className="self-center mb-4">
             <FaSearch />
           </div>
 

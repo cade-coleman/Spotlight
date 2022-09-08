@@ -45,7 +45,7 @@ const AddComment = ({ postId }) => {
                         <textarea
                             placeholder="Leave a comment..."
                             name="commentText"
-                            className="form-input w-full col-12 col-md-9"
+                            className="form-input w-full col-12 col-md-9 rounded-md"
                             value={commentText}
                             onChange={handleChange}
                         ></textarea>
@@ -53,9 +53,12 @@ const AddComment = ({ postId }) => {
                         Character Count: {characterCount}/140
                         {error && <span className="ml-2">Something went wrong...</span>}
                     </p>
-                        <button className="btn col-12 col-md-3" type="submit">
+                        <button className="bg-green-600 rounded-md w-24 text-white" type="submit">
                             Submit
                         </button>
+                        <a href="/home" className="text-blue-600 rounded-md w-24 ml-1 font-bold" type="submit">
+                            Go back
+                        </a>
                     </form>
                 </div>
             )}
