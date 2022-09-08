@@ -9,7 +9,6 @@ import { QUERY_POSTS } from "../utils/queries";
 const Home = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
   const posts = data?.posts || [];
-
   return (
     <div>
       <div className="w-full h-screen">
