@@ -8,7 +8,7 @@ import {
   MdTextsms,
 } from "react-icons/md";
 
-const PostList = ({ posts, title, showTitle = true }) => {
+const PostList = ({ posts, title, showTitle = true, showUsername = true, }) => {
   const [likePost] = useMutation(LIKE_POST);
   const [unlikePost] = useMutation(UNLIKE_POST);
   if (!posts.length) {

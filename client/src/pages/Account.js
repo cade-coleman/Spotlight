@@ -1,12 +1,11 @@
 import React , {useState} from "react";
 import Nav from "../components/Nav/Nav";
 import LDmode from "../components/LDmode/LDmode";
-import { Link } from "react-router-dom";
-import { Navigate, useParams } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import PostList from "../components/PostList";
-import { QUERY_USER, QUERY_LOGGED_IN, QUERY_POSTS } from "../utils/queries";
-
+import { QUERY_USER, QUERY_LOGGED_IN,} from "../utils/queries";
 import Auth from "../utils/auth";
 
 const Account = () => {
@@ -17,15 +16,15 @@ const Account = () => {
     const user = data?.user || data?.loggedIn || {};
 
     // gets the user's posts
-    const { ploading, pdata } = useQuery(QUERY_POSTS, {
-        variables: { username: user.username },
-    });
-    const posts = pdata?.posts || [];
-    console.log(posts);
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+        return <Navigate to="/account"/>
+    }
 
     if (loading) {
         return <div>Loading...</div>;
     }
+
+
 
     if (!user?.username) {
         return (
@@ -75,17 +74,15 @@ const Account = () => {
 
         <div>
           <div className=" bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4">
-            <h2 className="text-lg">Posts</h2>
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <PostList posts={posts} title="" />
-            )}
+            <h2 className="text-lg">Title</h2>
+            <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
+              {user.title}
+            </p>
           </div>
         </div>
 
         <div
-          name="contac"
+          name="contact"
           className="bg-[#DDDED9] border-solid border-transparent rounded-md w-98 h-28 ml-16 mr-14 mt-4"
         >
           <div>
@@ -93,7 +90,7 @@ const Account = () => {
             <form className="">
             {/* ADD TERNARY STATEMENT */}
             <p className="rounded-md w-4/5 bg-white h-18 h-16 ml-3 color-black">
-              {user.bio}
+              {user.email}
             </p>
           </form>
           </div>

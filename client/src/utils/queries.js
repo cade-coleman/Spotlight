@@ -87,6 +87,10 @@ export const QUERY_LOGGED_IN = gql`
             title
             bio
             email
+            posts {
+                _id
+                postText
+            }
         }
     }
 `;
