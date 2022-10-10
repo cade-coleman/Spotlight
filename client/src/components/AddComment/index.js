@@ -56,9 +56,9 @@ const AddComment = ({ postId }) => {
                         <button className="bg-green-600 rounded-md w-24 text-white" type="submit">
                             Submit
                         </button>
-                        <a href="/home" className="text-blue-600 rounded-md w-24 ml-1 font-bold" type="submit">
+                        <Link to="/home" className="text-blue-600 rounded-md w-24 ml-1 font-bold" type="submit">
                             Go back
-                        </a>
+                        </Link>
                     </form>
                 </div>
             )}
