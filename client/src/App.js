@@ -14,7 +14,7 @@ import AddNewPost from './pages/AddNewPost';
 import Notifications from "./pages/Notifications";
 import SinglePost from "./pages/SinglePost";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
