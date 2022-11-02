@@ -41,29 +41,7 @@ const Login = (props) => {
       password: "",
     });
   };
-  // I have no idea what this is doing
-
-  /*IMPORT HOOKS */
-  // import {useRef, useState, useEffect} from 'react';
-  // const Login = () => {
-  //   const userRef = useRef();
-  //   const errRef = useRef();
-
-  //   const [user, setUser] = useState('');
-  //   const [pwd, setPwd] = useState('');
-  //   const [errMsg, setErrMsg] = useState('');
-
-  // useEffect(() =>{
-  //   userRef.current.focus();
-  // }, []);
-
-  // useEffect(() =>{
-  //   setErrMsg();
-  // }, [user, pwd]);
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  // }
+ 
   return (
     <div className=" bg-[#2A558C] w-full h-screen">
       {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
@@ -130,8 +108,9 @@ const Login = (props) => {
 
           <div className="text-center ">
             <a
-              href="http://localhost:3000/Signup"
-              className="bg-green-500 rounded-md w-1/2 text-white hover:bg-green-700"
+            // Original was local host 3000
+              href="http://localhost:3001/Signup"
+              className="text-white"
             >
               Create an Account
             </a>
