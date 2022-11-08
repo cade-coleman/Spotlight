@@ -1,6 +1,6 @@
 # Spotlight
 
-
+## Currently undergoing face lift for conversion to desk top ui
 
 ### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
