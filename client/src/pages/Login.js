@@ -47,7 +47,7 @@ const Login = (props) => {
       {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
       {/*LOGO */}
       <div
-        style={{ backgroundImage: `url(${Logo})` }}
+        // style={{ backgroundImage: `url(${Logo})` }}
         className="content-div flex justify-center items-center"
       ></div>
 
