@@ -1,6 +1,9 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
+// userPost containts the models for all user interactions on posts, including comments, likes, and other potential features
+
+
 const postSchema = new Schema({
   postText: {
     type: String,

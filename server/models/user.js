@@ -1,6 +1,10 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+
+// Our user model contains the login and signup features that are going to be used on the first page
+
+
 const userSchema = new Schema({
   username: {
     type: String,
